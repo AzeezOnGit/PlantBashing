@@ -8,14 +8,16 @@ sleep 3
 echo "Do you want to plant a new seed? (y/n)"
 read answer
 
-if [[ "$answer == "y" || "$answer" == "Y" ]]; then
-	echo "You have dug a whole and planted a small seed"
-	echo -n "Medium size"
-	read size
-	echo "A $size seed is now planted. Good luck growing it!""
+if [[ $answer == "y" || $answer == "Y" ]]; then
+	echo "You have dug a hole and planted a seed..."
+	sleep 2
+	echo "It is medium size"
+	sleep 2
+	echo "A medium seed is now planted. Good luck growing it!"
+	
 else 
 	echo "Exiting the game..."
 	sleep 3
-	echo "Godbye."
+	echo "Goodbye."
 	exit 0
 fi
