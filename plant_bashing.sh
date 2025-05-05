@@ -34,7 +34,11 @@ if [[ "$grow" == "y" || "$grow" == "Y" ]]; then
 
 	echo "Waiting for Day 2..."
 	sleep 2
-	echo "Day 3: The seed germinated overnight"
+	echo "Nothing happened"
+
+	echo "Waiting for Day 3..."
+	sleep 2
+	echo "The seed germinated overnight"
 else 
 	echo "Exiting the game..."
 	sleep 2
