@@ -22,7 +22,7 @@ else
 	exit 0
 fi
 sleep 2
-echo "In this digital world, time moves much faster than it does outside reality, and that mere minutes or seconds of your time can be hours, days, or months in this place"
+echo "In this digital world, time moves much faster than it does outside reality. Mere minutes or seconds of your time can be hours, days, or months in this place"
 sleep 2
 echo "Do you want to wait for your seed to grow? (y/n)"
 read grow
