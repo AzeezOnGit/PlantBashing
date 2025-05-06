@@ -46,30 +46,16 @@ else
 	exit 0
 fi
 	echo ""
-	echo "Do you want to wait 1 more day or leave now? (wait/leave)"
-	if [[ "$choice" == "leave" ]]; then
+	echo "Do you want to wait 1 more day or leave now? (y/n)"
+	read answer
+	if [[ "$answer" == "n" || $answer == "N" ]]; then
 		echo "Goodbye. Thanks for playing!"
 		sleep 2
 		exit 0
-	fi
-	echo "Waiting for Day 4..."
-	sleep 2
+	
+	elif [[ "$answer" == "y" || $answer == "Y" ]]; then
 	echo "Day 4: Nothing happened. The plant is resting"
-
-	while [[$current day -lt 21 ]]; do
-		echo ""
-		echo "DO you want to continue watching the plant grow? (y/n)"
-		read next
-
-	if [[ "$next" != "y" && "$next" != "Y" ]]; then
-		echo "Thank you for growing your plant with care."
-		sleep 2
-		exit 0
-	fi
-
-	current_day=$((current_day + 1))
-	height=$((height + 2))
-	leaves=$((leaves + 2))
+	sleep 2
 
 	if [[ $current_day -eq 5 ]]; then
 		echo "Day 5: The plant grew 2cm in heigh and 2 leaves"
