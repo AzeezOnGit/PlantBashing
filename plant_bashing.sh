@@ -56,45 +56,35 @@ fi
 	sleep 2
 	echo "Day 4: Nothing happened. The plant is resting"
 
-	echo "Waiting for Day 5..."
-	sleep 2
-	echo "Day 5: Nothing happened again. Be patient buddy"
-
-	echo "Waiting for Day 6..."
-	sleep 2
-	echo "Day 6: The plant gre overnight into a sapling"
-	height=0
-	leaves=0
-
-	while [[ $current_day -lt $max_days ]]; do
+	while [[$current day -lt $max_days ]]; do
 		echo ""
-		echo "Do you want to continue watching the sapling grow, or leave? (stay/leave)"
+		echo "DO you want to continue watching the plant grow? (y/n)"
 		read next
-		if [[ "$next" == "leave" ]]; then
-			echo ""
-			echo "Goodbye. Thanks for playing!"
-			sleep 2
-			exit 0
-		elif [[ "$next" == "stay" ]]; then
-			current_day=$((current_day + 1))
-			height=$((height + 2))
-			leaves=$((leaves + 2))
-			echo "Day $current_day: The plant gre 2 cm and gained 2 leaves.
-			show_status
-			sleep 2
-		else
-			echo "Make sure you type 'stay' to keep watching or 'leave' to exit."
-		fi
-		done
 
-		echo ""
-		echo "Your plant has completed its life cycle!"
-		echo "Total lifespan of your plant:"
-		echo "Total age: 21 days"
-		echo "Final height: 34 cm"
-		echo "Leaf total: 34"
-		sleep 2
-		echo "Thanks for playing!"
+	if [[ "$next" != "y" && "$next" != "Y" ]]; then
+		echo "Thank you for growing your plant with care."
 		sleep 2
 		exit 0
+	fi
+
+	current_day=$((current_day + 1))
+	height=$((height + 2))
+	leaves=((leaves + 2))
+
+	echo "Day $current_day: The plant grew 2 cm and gained 2 leaves."
+	echo "The plant is now ${height}cm tall with ${leaves} leaves."
+	show_status
+	sleep 2
+done
+
+echo ""
+echo "Your plant has completed its life cycle!"
+echo "Total lifespan of your plant:"
+echo "Total age: 21 days"
+echo "Final height: 34 cm"
+echo "Leaf total: 34"
+sleep 2
+echo "Thanks for playing"
+sleep 2
+exit 0
 
