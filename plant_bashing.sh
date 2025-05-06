@@ -63,3 +63,48 @@ fi
 	echo "Day 4: Wating for Day 4..."
 	sleep 2
 	echo "Nothing happened"
+
+
+
+
+day = 7
+leaves = 0
+height = 0
+	ask user if wait
+	if yes then
+		day ++ (8)
+		leaves += 2
+		height += 2
+		echo $day $leaves $height
+		ask user if wait
+		if yes then
+			$day++
+			$leaves+= 2
+			$height+= 2
+			echo $day $leaves $height
+			ask user if wait
+				if yes then
+					day ++ (10)
+					leaves += 2
+					height += 2
+					echo day leaves height
+					ask user if wait
+				else
+					echo thanks for playing...
+					wait 1
+					exit
+			else
+			echo thanks for playing...
+			wait 1
+			exit
+	else
+		echo thanks for playing...
+		wait 1
+		exit
+
+
+if THIS then
+	do this
+else 
+	do this
+if
