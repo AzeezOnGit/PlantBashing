@@ -24,7 +24,7 @@ fi
 sleep 2
 echo "In this digital world, time moves much faster than it does outside reality. Mere minutes or seconds of your time can be hours, days, or months in this place"
 sleep 2
-echo "Do you want to wait for your seed to grow? (y/n)"
+echo "Do you want to wait 3 days for your seed to grow? (y/n)"
 read grow
 
 if [[ "$grow" == "y" || "$grow" == "Y" ]]; then
@@ -45,19 +45,14 @@ else
 	echo "Goodbye."
 	exit 0
 fi
-	echo ""
-	echo "Do you want to wait 1 more day or leave now? (y/n)"
+	echo "Do you want to grow it for 1 more day or leave now? (y/n)"
 	read answer
-	if [[ "$answer" == "n" || $answer == "N" ]]; then
-		echo "Goodbye. Thanks for playing!"
-		sleep 2
-		exit 0
-	
-	elif [[ "$answer" == "y" || $answer == "Y" ]]; then
-	echo "Day 4: Nothing happened. The plant is resting"
+	if [[ "$grow" == "n" || "$grow" == "N" ]]; then
+	echo "Goodbye. Thanks for playing!"
 	sleep 2
-
-	if [[ $current_day -eq 5 ]]; then
-		echo "Day 5: The plant grew 2cm in heigh and 2 leaves"
-	elif [[ $current_day -eq 6 ]]; then
-		echo "Day 6: The plant grew another 2cm in heigh and 2 leaves. It is now 4cm in heigh and has 4 leaves"
+	exit 0
+	
+	if [[ "$grow" == "y" || "$grow" == "Y" ]]; then
+	echo "Day 4: Wating for Day 4..."
+	sleep 2
+	echo "Nothing happened"
