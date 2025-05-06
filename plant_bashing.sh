@@ -76,7 +76,7 @@ fi
 			sleep 2
 			exit 0
 		elif [[ "$next" == "stay" ]]; then
-			current_day=$ ((current_day + 1))
+			current_day=$((current_day + 1))
 			height=$((height + 2))
 			leaves=$((leaves + 2))
 			echo "Day $current_day: The plant gre 2 cm and gained 2 leaves.
