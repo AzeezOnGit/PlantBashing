@@ -39,6 +39,13 @@ if [[ "$grow" == "y" || "$grow" == "Y" ]]; then
 	echo "Waiting for Day 3..."
 	sleep 2
 	echo "The seed germinated overnight"
+	if [[ condition ]]; then
+		#statements
+	elif [[ condition ]]; then
+		#statements
+	else
+		#statements
+	fi
 else 
 	echo "Exiting the game..."
 	sleep 2
