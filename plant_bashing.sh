@@ -69,10 +69,9 @@ fi
 
 	current_day=$((current_day + 1))
 	height=$((height + 2))
-	leaves=((leaves + 2))
+	leaves=$((leaves + 2))
 
 	if [[ $current_day -eq 5 ]]; then
 		echo "Day 5: The plant grew 2cm in heigh and 2 leaves"
 	elif [[ $current_day -eq 6 ]]; then
 		echo "Day 6: The plant grew another 2cm in heigh and 2 leaves. It is now 4cm in heigh and has 4 leaves"
-
