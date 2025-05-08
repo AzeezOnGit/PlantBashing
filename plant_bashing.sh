@@ -76,12 +76,40 @@ else
 fi
 
 echo "Do you want to grow it for 1 more day or leave now? (y/n)"
-read grow
+read -p
  
  if [[ "$grow" == "y" || "$grow" == "Y" ]]; then
 	echo "Wating for Day 6..."
 	sleep 2
-	echo "It's morning time and the seed grew overnight into a sapling! It is now 2cm in height and has 2 leaves."	
+	echo "It's morning time and the plant grew overnight into a sapling! It is now 2cm in height and has 2 leaves."	
+
+else
+	echo "Goodbye. Thanks for playing!"
+	sleep 2
+	exit 0
+fi
+
+echo "Do you want to grow it for 1 more day or leave now? (y/n)"
+read -p
+
+if [[ "$grow" == "y" || "$grow" == "Y" ]]; then
+	echo "Wating for Day 7..."
+	sleep 2
+	echo "Wow! The seed grew overnight again and it is now 4cm in height and has 4 leaves "
+
+else
+	echo "Goodbye. Thanks for playing!"
+	sleep 2
+	exit 0
+fi
+
+echo "Do you want to grow it for 1 more day or leave now? (y/n)"
+read -p
+
+if [[ "$grow" == "y" || "$grow" == "Y" ]]; then
+	echo "Wating for Day 8..."
+	sleep 2
+	echo "Hooray! The seed grew overnight again and it is now 6cm in height and has 6 leaves "
 
 else
 	echo "Goodbye. Thanks for playing!"
