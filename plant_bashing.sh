@@ -46,18 +46,19 @@ else
 	echo "Goodbye."
 	exit 0
 fi
-	echo "Do you want to grow it for 1 more day or leave now? (y/n)"
-	read grow
-	if [[ "$grow" == "n" || "$grow" == "N" ]]; then
-	echo "Goodbye. Thanks for playing!"
-	sleep 2
-	exit 0
 	
-	if [[ "$grow" == "y" || "$grow" == "Y" ]]; then
+echo "Do you want to grow it for 1 more day or leave now? (y/n)"
+read grow
+
+if [[ "$grow" == "y" || "$grow" == "Y" ]]; then
 	echo "Day 4: Wating for Day 4..."
 	sleep 2
 	echo "Nothing happened"
+	
 
-
-
-
+else
+	echo "Goodbye. Thanks for playing!"
+	sleep 2
+	exit 0
+fi
+	
