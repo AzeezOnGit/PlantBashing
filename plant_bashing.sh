@@ -24,21 +24,13 @@ fi
 sleep 2
 echo "In this digital world, time moves much faster than it does outside reality. Mere minutes or seconds of your time can be hours, days, or months in this place"
 sleep 2
-echo "Do you want to wait 3 days for your seed to grow? (y/n)"
+echo "Do you want to wait 1 days for your seed to grow? (y/n)"
 read grow
 
 if [[ "$grow" == "y" || "$grow" == "Y" ]]; then
 	echo "Waiting one day for seed to grow..."
 	sleep 2
-	echo "Day 1: The seed was planted"
-
-	echo "Waiting for Day 2..."
-	sleep 2
-	echo "Nothing happened"
-
-	echo "Waiting for Day 3..."
-	sleep 2
-	echo "The seed germinated overnight"
+	echo The seed was planted"
 
 else 
 	echo "Exiting the game..."
@@ -46,7 +38,38 @@ else
 	echo "Goodbye."
 	exit 0
 fi
-	
+
+echo "Do you want to wait another day for your seed to grow? (y/n)"
+read grow
+
+if [[ "$grow" == "y" || "$grow" == "Y" ]]; then
+	echo "Waiting for Day 2..."
+	sleep 2
+	echo Nothing happened"
+
+else 
+	echo "Exiting the game..."
+	sleep 2
+	echo "Goodbye."
+	exit 0
+fi
+
+echo "Do you want to wait another day for your seed to grow? (y/n)"
+read grow
+
+if [[ "$grow" == "y" || "$grow" == "Y" ]]; then
+	echo "Waiting for Day 3..."
+	sleep 2
+	echo "Wow the seed erminated over night!"
+
+	else 
+	echo "Exiting the game..."
+	sleep 2
+	echo "Goodbye."
+	exit 0
+fi
+
+
 echo "Do you want to grow it for 1 more day or leave now? (y/n)"
 read grow
 
@@ -76,7 +99,7 @@ else
 fi
 
 echo "Do you want to grow it for 1 more day or leave now? (y/n)"
-read -p
+read grow
  
  if [[ "$grow" == "y" || "$grow" == "Y" ]]; then
 	echo "Wating for Day 6..."
@@ -90,7 +113,7 @@ else
 fi
 
 echo "Do you want to grow it for 1 more day or leave now? (y/n)"
-read -p
+read grow
 
 if [[ "$grow" == "y" || "$grow" == "Y" ]]; then
 	echo "Wating for Day 7..."
@@ -104,7 +127,7 @@ else
 fi
 
 echo "Do you want to grow it for 1 more day or leave now? (y/n)"
-read -p
+read grow
 
 if [[ "$grow" == "y" || "$grow" == "Y" ]]; then
 	echo "Wating for Day 8..."
