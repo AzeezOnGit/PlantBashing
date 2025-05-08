@@ -39,13 +39,7 @@ if [[ "$grow" == "y" || "$grow" == "Y" ]]; then
 	echo "Waiting for Day 3..."
 	sleep 2
 	echo "The seed germinated overnight"
-	if [[ condition ]]; then
-		#statements
-	elif [[ condition ]]; then
-		#statements
-	else
-		#statements
-	fi
+
 else 
 	echo "Exiting the game..."
 	sleep 2
@@ -67,44 +61,3 @@ fi
 
 
 
-day = 7
-leaves = 0
-height = 0
-	ask user if wait
-	if yes then
-		day ++ (8)
-		leaves += 2
-		height += 2
-		echo $day $leaves $height
-		ask user if wait
-		if yes then
-			$day++
-			$leaves+= 2
-			$height+= 2
-			echo $day $leaves $height
-			ask user if wait
-				if yes then
-					day ++ (10)
-					leaves += 2
-					height += 2
-					echo day leaves height
-					ask user if wait
-				else
-					echo thanks for playing...
-					wait 1
-					exit
-			else
-			echo thanks for playing...
-			wait 1
-			exit
-	else
-		echo thanks for playing...
-		wait 1
-		exit
-
-
-if THIS then
-	do this
-else 
-	do this
-if
