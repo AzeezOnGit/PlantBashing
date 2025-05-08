@@ -47,7 +47,7 @@ else
 	exit 0
 fi
 	echo "Do you want to grow it for 1 more day or leave now? (y/n)"
-	read answer
+	read grow
 	if [[ "$grow" == "n" || "$grow" == "N" ]]; then
 	echo "Goodbye. Thanks for playing!"
 	sleep 2
