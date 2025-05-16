@@ -332,12 +332,5 @@ if [[ "$grow" == "y" || "$grow" == "Y" ]]; then
 	sleep 1
 	echo "This is now the end of the plant's life cycle. Thanks for playing!"
 	sleep 1
-	
-echo "Do you want to play again? (y/n)"
-read play
-
-if [[ "$play" == "y" || "$play" == "Y" ]]; then
-	echo "Welcome back to the plant care simulator"
-	sleep 1
 	exit 0
 fi
