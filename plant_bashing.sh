@@ -331,13 +331,13 @@ if [[ "$grow" == "y" || "$grow" == "Y" ]]; then
 	echo "Oh no! The seed had grown overnight again and was 34 cm in heigh and had 34 leaves, but then it lost to time"
 	sleep 1
 	echo "This is now the end of the plant's life cycle. Thanks for playing!"
-	exit 0
-fi
-
+	sleep 1
+	
 echo "Do you want to play again? (y/n)"
 read play
 
 if [[ "$play" == "y" || "$play" == "Y" ]]; then
 	echo "Welcome back to the plant care simulator"
 	sleep 1
+	exit 0
 fi
