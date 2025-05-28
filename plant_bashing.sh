@@ -95,4 +95,5 @@ while $keep_playing; do
 	playAgain
 	playAgain
 	playAgain
-done
+	
+	done
