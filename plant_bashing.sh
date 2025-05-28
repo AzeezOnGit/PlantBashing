@@ -25,9 +25,9 @@ while [[ "$keep_playing" == "true" ]]; do
 
 playAgain() {
 	read -p "Do you want to play again? (y/n): " users_answer
-	if [[ $users_answer == "y" | $users_answer == "yes" ]]; then
+	if [[ $users_answer == "y" || $users_answer == "yes" ]]; then
 		keep_playing=true
-	elif [[ $users_answer == "n" | $users_answer == "no" ]]; then
+	elif [[ $users_answer == "n" || $users_answer == "no" ]]; then
 		keep_playing=false
 	fi
 	return $keep_playing
