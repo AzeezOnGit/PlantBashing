@@ -55,6 +55,7 @@ grow_plant() {
 	if [ $plant_age -eq 21 ];then
 		echo " Your plant has fully mature and how now passed away"
 		echo "Final height: $plant_height cm, Final Leaves: plant_leaves"
+	fi
 }
 #Need functions for:
 #asking if the user wants to wait...
