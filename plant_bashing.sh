@@ -64,7 +64,7 @@ grow_plant() {
     fi
 
     if [ $plant_age -eq 21 ]; then
-        echo "🌿 The life cycle of your plant has ended!"
+        echo "The life cycle of your plant has ended! It got lost to time sadly"
         echo "Final height: 34cm | Final leaves: 34"
     fi
 }
@@ -76,7 +76,7 @@ ask_to_wait() {
         if [[ "$wait_choice" =~ ^[Yy](es)?$ ]]; then
             return 0  # Continue
         else
-            echo "Your sapling is lost to time... 🌙 Goodbye!"
+            echo "Goodbye then!"
             return 1  # Exit early
         fi
     fi
@@ -89,7 +89,7 @@ ask_to_play_again() {
         keep_playing=true
     else
         keep_playing=false
-        echo "Thank you for playing, $user_name! 🌿 See you next time!"
+        echo "Thank you for playing, $user_name! See you next time!"
     fi
 }
 
@@ -114,7 +114,7 @@ while [ "$keep_playing" == true ]; do
         grow_plant
 
         if [ $plant_age -eq 21 ]; then
-            echo "🌿 The life cycle has come to an end. 🌿"
+            echo "The life cycle has come to an end."
             break
         fi
 
