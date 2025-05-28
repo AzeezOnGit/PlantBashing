@@ -56,7 +56,7 @@ grow_plant() {
     if [ $plant_age -eq 21 ]; then
         plant_height=34
         plant_leaves=34
-        echo "🌿 Your plant has reached the end of its life cycle!"
+        echo "Your plant has reached the end of its life cycle!"
         echo "Final Height: $plant_height cm, Final Leaves: $plant_leaves"
         echo "Thank you for growing your plant with us, $user_name!"
     fi
@@ -71,25 +71,20 @@ reset_plant() {
 
 # Main game loop
 while [ "$keep_playing" = true ]; do
-    if [ "$first_play" = true ]; then
-        read -p "Welcome to the plant simulator! What's your name? " user_name
-        first_play=false
-    fi
+    if [[ "$first_play" == "true" ]]; then
+  read -p "Do you want to name your plant? (y/n): " name_choice
+  if [[ "$name_choice" =~ ^[Yy](es)?$ ]]; then
+    read -p "What would you like to name your plant? " plant_name
+  else
+    plant_name="Morpheus"
+  fi
+else
+  read -p "Do you want to change your plant's name before planting a new seed? (y/n): " change_name
+  if [[ "$change_name" =~ ^[Yy](es)?$ ]]; then
+    read -p "What would you like to name your new plant? " plant_name
+  fi
+fi
 
-    # Ask to name or change plant name
-    if [ $plant_age -eq 0 ]; then
-        if [ "$first_play" = false ]; then
-            read -p "Would you like to change your plant's name? (y/n): " change_name
-        else
-            read -p "Would you like to name your plant? (y/n): " change_name
-        fi
-
-        if [[ "$change_name" =~ ^[Yy](es)?$ ]]; then
-            read -p "Enter the name of your plant: " plant_name
-        else
-            plant_name="Morpheus"
-        fi
-    fi
 
     echo "Let's begin growing $plant_name, $user_name!"
 
