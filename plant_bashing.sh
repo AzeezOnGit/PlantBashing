@@ -426,16 +426,3 @@ else
 	sleep 1
 	exit 0
 fi
-
-echo "Do you want to grow it for 1 more day or leave now? (y/n)"
-read grow
-
-if [[ "$grow" == "y" || "$grow" == "Y" ]]; then
-	echo "Wating for the next morning"
-	sleep 1
-	echo "Oh no! The seed had grown overnight again and was 34 cm in heigh and had 34 leaves, but then it lost to time"
-	sleep 1
-	echo "This is now the end of the plant's life cycle. Thanks for playing!"
-	sleep 1
-	exit 0
-fi
