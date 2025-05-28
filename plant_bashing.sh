@@ -64,7 +64,7 @@ grow_plant() {
     fi
 
     if [ $plant_age -eq 21 ]; then
-        echo "The life cycle of your plant has ended! It got lost to time sadly after growing overnight again 2cm in height and 2 leaves."
+        echo "After growing 2 cm in height and 2 leaves once more, your plant sadly got lost to time"
         echo "Final height: 34cm | Final leaves: 34"
     fi
 }
