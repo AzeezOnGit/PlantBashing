@@ -36,24 +36,25 @@ playAgain() {
 # Function to grow plant
 grow_plant() {
 	((plant_age++))
-
-check_growth_stage() {
-	if [[ $plant_age -eq 3 ]]; then
-		echo "Your seed germinated overngiht!"
-	elif [[ $plant_age -eq 6 ]]; then
-		echo "Your plant grew overnight into a sapling"
-
-daily_growth() {
-	if [[ $plant_age -gt 6 && $plant_age -lt 21 ]]; then
+	if [ $plant_age -eq 1 ]; then
+		echo "You planted a new seed"
+	elif [ $plant_age -eq 3 ]; then
+		echo "Your seed germinated overnight!"
+	elif [ plant_age -eq 6 ]; then
+		plant_height=2
+		plant_leaves=2
+		echo "Overnight, your plant has become a small sapling"
+		echo "Height: $plant_height cm, Leaves: $plant_leaves"
+	elif [ $plant_age -gt 6 ] && [ $plant_age -le 21 ]; then
 		plant_height=$((plant_height + 2))
 		plant_leaves=$((plant_leaves + 2))
-
-		# Cap height and leaves at Day 21
-		if [[ $plant_age -eq 21 ]]; then
-			plant_height=34
-			plant_leaves=34
-		fi
+		echo "Day $plant_age: Your plant grows overnight."
+		echo "Height: $plant_height cm, Final Leaves: $plant_leaves"
 	fi
+
+	if [ $plant_age -eq 21 ];then
+		echo " Your plant has fully mature and how now passed away"
+		echo "Final height: $plant_height cm, Final Leaves: plant_leaves"
 }
 #Need functions for:
 #asking if the user wants to wait...
@@ -65,6 +66,22 @@ daily_growth() {
 #Then we run our "_main_" loop/program
 
 while $keep_playing; do
+	get_user_name
+	get_plant_name
+	plant_age=0
+	plant_height=0
+	plant_leaves=0
+
+	echo "Let's begin our gardening journey, $user_name!"
+
+	while [ $plant_age -lt 21 ] && $keep_playing; do
+		grow_plant
+		show_status
+		if [ $plant_age -lt 21 ]; then 
+			ask_to_wait
+		fi
+	done
+
 	#how do we start the game?
 	#Get the player name
 	#ask if player wants to plant a seed
@@ -421,6 +438,3 @@ if [[ "$grow" == "y" || "$grow" == "Y" ]]; then
 	sleep 1
 	exit 0
 fi
-
-
-
