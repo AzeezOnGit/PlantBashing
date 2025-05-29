@@ -112,20 +112,18 @@ while [ "$keep_playing" == true ]; do
     echo "Let's begin your gardening journey, $user_name!"
 
     # Day-by-day loop
-    while [ $plant_age -lt 21 ]; do
-        grow_plant
+    game_over=false  # Reset for each game
 
-        if [ $plant_age -eq 21 ]; then
-            echo "The life cycle has come to an end."
-            game_over=true
-        fi
+while [ $plant_age -lt 21 ] && [ "$game_over" != true ]; do
+    grow_plant
 
-        ask_to_wait
-        if [ $? -ne 0 ]; then
-            game_over=true
-        fi
-    done
+    if [ $plant_age -eq 21 ]; then
+        echo "The life cycle has come to an end."
+        game_over=true
+    fi
 
-    first_play=false
-    ask_to_play_again
+    ask_to_wait
+    if [ $? -ne 0 ]; then
+        game_over=true
+    fi
 done
