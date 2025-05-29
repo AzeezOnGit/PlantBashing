@@ -126,4 +126,4 @@ while [ $plant_age -lt 21 ] && [ "$game_over" != true ]; do
     if [ $? -ne 0 ]; then
         game_over=true
     fi
-done
+done 
