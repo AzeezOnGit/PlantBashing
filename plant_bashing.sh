@@ -89,9 +89,8 @@ ask_to_play_again() {
         keep_playing=true
     else
         keep_playing=false
-        echo "Thank you for playing, $user_name! See you next time!"
-        exit 0
-
+        echo "Thank you for playing, $user_name! See you next time!
+    "
     fi
 }
 
@@ -112,19 +111,20 @@ while [ "$keep_playing" == true ]; do
     echo "Let's begin your gardening journey, $user_name!"
 
     # Day-by-day loop
-    game_over=false  # Reset for each game
+    while [ $plant_age -lt 21 ]; do
+        grow_plant
 
-while [ $plant_age -lt 21 ] && [ "$game_over" != true ]; do
-    grow_plant
+        if [ $plant_age -eq 21 ]; then
+            echo "The life cycle has come to an end."
+            game_over=true
+        fi
 
-    if [ $plant_age -eq 21 ]; then
-        echo "The life cycle has come to an end."
-        game_over=true
-    fi
+        ask_to_wait
+        if [ $? -ne 0 ]; then
+            game_over=true
+        fi
+    done
+
+    first_play=false
+    ask_to_play_again
 done
-
-    ask_to_wait
-    if [ $? -ne 0 ]; then
-        game_over=true
-    fi
-done 
