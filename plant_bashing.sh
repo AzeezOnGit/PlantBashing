@@ -90,6 +90,8 @@ ask_to_play_again() {
     else
         keep_playing=false
         echo "Thank you for playing, $user_name! See you next time!"
+        exit 0
+
     fi
 }
 
