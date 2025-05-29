@@ -122,6 +122,7 @@ while [ "$keep_playing" == true ]; do
         ask_to_wait
         if [ $? -ne 0 ]; then
             game_over=true
+            exit 0
         fi
     done
 
