@@ -121,6 +121,7 @@ while [ $plant_age -lt 21 ] && [ "$game_over" != true ]; do
         echo "The life cycle has come to an end."
         game_over=true
     fi
+done
 
     ask_to_wait
     if [ $? -ne 0 ]; then
