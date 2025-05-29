@@ -17,6 +17,13 @@ get_user_name() {
     fi
 }
 
+# Default names array and index tracker
+default_names=("Morpheus" "Analiea" "Izzy")
+default_name_index=0
+
+# Function to assign default name
+assign_default_name() {
+    plant_name="$"
 # Function to ask if user wants to change plant name (second play onwards)
 change_plant_name() {
     read -p "Do you want to change your plant's name? (y/n): " change_name
