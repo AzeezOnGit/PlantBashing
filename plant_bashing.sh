@@ -44,8 +44,7 @@ name_plant() {
     if [[ "$name_choice" =~ ^[Yy](es)?$ ]]; then
         read -p "What do you want to name your plant? " plant_name
     else
-        plant_name="Morpheus"
-        echo "Your plant's name is $plant_name."
+        assign_default_name
     fi
 }
 
