@@ -34,7 +34,7 @@ change_plant_name() {
     if [[ "$change_name" =~ ^[Yy](es)?$ ]]; then
         read -p "What do you want to name your plant? " plant_name
     else
-        assign_defualt_name
+        assign_default_name
     fi
 }
 
