@@ -9,6 +9,16 @@ plant_leaves=0
 plant_name="Morpheus"
 user_name=""
 
+# Array for weather
+weather_conditions=("Rainy" "Cloudy" "Sunny" "Overcast" "Windstorm" "Foggy")
+
+# Function to get random weather
+get_weather() {
+    random_index=$(( RANDOM % ${#weather_conditions[@]} ))
+    current_weather="${weather_conditions[$random_index]}"
+    echo "Today's weather: $current_weather"
+}
+
 # Function to get user's name on first play
 get_user_name() {
     if [ "$first_play" == true ]; then
@@ -70,6 +80,7 @@ grow_plant() {
         plant_leaves=$((plant_leaves + 2))
         echo "Day $plant_age: Your plant grows overnight."
         echo "Height: ${plant_height}cm | Leaves: ${plant_leaves}"
+        get_weather
     fi
 
     if [ $plant_age -eq 21 ]; then
