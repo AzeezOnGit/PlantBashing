@@ -8,6 +8,8 @@ plant_height=0
 plant_leaves=0
 plant_name="Morpheus"
 user_name=""
+growth_rate=0
+windstroms_survived=0
 
 # Array for weather
 weather_conditions=("Rainy" "Cloudy" "Sunny" "Overcast" "Windstorm" "Foggy")
@@ -61,27 +63,37 @@ name_plant() {
 # Function to grow the plant
 grow_plant() {
     ((plant_age++))
-    if [ $plant_age -eq 1 ]; then
-        echo "You planted a small seed the size of a grain of sand."
-    elif [ $plant_age -eq 2 ]; then
-        echo "Day 2: Nothing happened today."
-    elif [ $plant_age -eq 3 ]; then
-        echo "Day 3: Your seed germinated overnight!"
-        if [ "$first_play" == true ]; then
-            name_plant
-        fi
-    elif [ $plant_age -eq 6 ]; then
-        plant_height=2
-        plant_leaves=2
-        echo "Day 6: Your plant has become a small sapling!"
-        echo "Height: ${plant_height}cm | Leaves: ${plant_leaves}"
-    elif [ $plant_age -gt 6 ] && [ $plant_age -le 21 ]; then
-        plant_height=$((plant_height + 2))
-        plant_leaves=$((plant_leaves + 2))
-        echo "Day $plant_age: Your plant grows overnight."
-        echo "Height: ${plant_height}cm | Leaves: ${plant_leaves}"
-        get_weather
-    fi
+    today_weather=${weather_conditions[$((RANDOM % ${#weather_conditions[@]}))]}
+    echo "Day $plant_age: Weather today is $today_weather."
+
+    case $today_weather in
+        "Rainy")
+            echo "Rainy weather. No growth today, but your plant's growth rate increases by 2."
+            growth_rate=$((growth_rate + 2))
+            ;;
+        "Sunny")
+            echo "Sunny weather! Growth occurs and growth rate increases by 3."
+            growth_rate=$((growth_rate + 3))
+            grow=true
+            ;;
+        "Cloudy")
+            echo "Cloudy weather. No growth today."
+            ;;
+        "Overcast")
+            echo "Overcast weather. Growth occurs!"
+            grow=true
+            ;;
+        "Windstorm")
+            echo "A wild windstorm! No growth, but your plant loses 3 leaves and growth rate decreases by 2."
+            plant_leaves=$((plant_leaves - 3))
+            ((windstorms_survived++))
+            growth_rate=$((growth_rate - 2))
+            ;;
+        "Foggy")
+            echo "Foggy day. No growth, and your plant's growth rate decreases by 1."
+            growth_rate=$((growth_rate - 1))
+            ;;
+    esac
 
     if [ $plant_age -eq 21 ]; then
         echo "After growing 2 cm in height and 2 leaves once more, your plant sadly got lost to time"
